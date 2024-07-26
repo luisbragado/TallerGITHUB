@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v2
+      with:
+        repository: luisbragado/TallerGITHUB
+        ref: main
+
+    - name: Imprimir mensaje
+      run: echo "Se hizo push a la rama main. Ejecutando flujo de trabajo..."
+
+    - name: Cat de archivo Pruebas
+      run: cat Prueba      
